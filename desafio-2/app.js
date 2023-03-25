@@ -1,17 +1,17 @@
 const fs = require('fs')
 
 class ProductManager {
-    constructor(path) {
-        this.path = path
+    constructor() {
+        this.path = './products.json'
     }
 
     writeFile = async data => {
         try {
-            await fs.promises.writeFile(
-                this.path, JSON.stringify(data, null, 2)
-                )
+            await fs.promises.appendFile(
+                './products.json', JSON.stringify(data, null, 2)
+            )
         }catch(err) {
-            console.log(error);
+            console.log(`error: ${err}`);
         }
     }
 
@@ -21,7 +21,8 @@ class ProductManager {
             const products = JSON.parse(productsList)
             return products
         }catch(error) {
-            console.log(error);
+            if(error.message.includes('ENOENT: no such file or directory')) return []
+            console.log(`este error ${error}`);
             }
     }
 
