@@ -7,5 +7,32 @@
     "code": 1,
     "stock": 15,
     "id": 1
+  },
+  {
+    "title": "Cs 1.6",
+    "description": "Servidor de calidad baja cs 1.6",
+    "price": 500,
+    "thumbnail": "url",
+    "code": 2,
+    "stock": 14,
+    "id": 2
+  },
+  {
+    "title": "Cs 1.6",
+    "description": "Servidor de calidad media cs 1.6",
+    "price": 1000,
+    "thumbnail": "url",
+    "code": 3,
+    "stock": 12,
+    "id": 3
+  },
+  {
+    "title": "Cs 1.6",
+    "description": "Servidor de calidad alta cs 1.6",
+    "price": 1200,
+    "thumbnail": "url",
+    "code": 4,
+    "stock": 15,
+    "id": 4
   }
 ]

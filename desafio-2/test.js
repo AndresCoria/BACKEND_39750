@@ -49,9 +49,12 @@ async function Test() {
     stock: 5
   }
 
-  await products.addProduct(objeto1).then(data => console.log(data));
+  // await products.addProduct(objeto1).then(data => console.log(data));
+  // await products.addProduct(objeto2).then(data => console.log(data));
+  // await products.addProduct(objeto3).then(data => console.log(data));
+  // await products.addProduct(objeto4).then(data => console.log(data));
   // await products.getProducts().then(data => console.log(data));
-  // await products.getProductById(1).then(data => console.log(data));
+  await products.getProductById(5).then(data => console.log(data));
   // await products.updateProduct(1, {
   //   "title": "CS GO",
   //   "description": 'Servidor de calidad alta Global Ofenssive',
@@ -60,7 +63,7 @@ async function Test() {
   //   "code": 4,
   //   "stock": 5,
   // })
-  // await products.deleteById(1)
+  // await products.deleteById(4)
 }
 
 Test();

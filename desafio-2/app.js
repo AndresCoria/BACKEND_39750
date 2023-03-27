@@ -63,7 +63,7 @@ class ProductManager {
         try {
             let products = await this.getProducts()
             const product = products.find(prod => prod.id === id)
-            return product
+            return product ? product : console.log('No product found');
         } catch (error) {
             console.log(error);
         }
