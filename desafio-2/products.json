@@ -18,12 +18,12 @@
     "id": 2
   },
   {
-    "title": "Cs 1.6",
-    "description": "Servidor de calidad media cs 1.6",
-    "price": 1000,
+    "title": "CS GO",
+    "description": "Servidor de calidad alta Global Ofenssive",
+    "price": 1800,
     "thumbnail": "url",
-    "code": 3,
-    "stock": 12,
+    "code": 4,
+    "stock": 5,
     "id": 3
   },
   {
@@ -34,5 +34,14 @@
     "code": 4,
     "stock": 15,
     "id": 4
+  },
+  {
+    "title": "Cs 1.6",
+    "description": "Servidor de calidad alta cs 1.6",
+    "price": 1100,
+    "thumbnail": "url",
+    "code": 5,
+    "stock": 15,
+    "id": 5
   }
 ]

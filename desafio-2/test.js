@@ -39,6 +39,15 @@ async function Test() {
     stock: 15
   }
 
+  const objeto5 = {
+    title: "Cs 1.6",
+    description: 'Servidor de calidad alta cs 1.6',
+    price: 1100,
+    thumbnail: "url",
+    code: 5,
+    stock: 15
+  }
+
   const upDateObject = {
     id: 1,
     title: "Cs GO",
@@ -53,9 +62,10 @@ async function Test() {
   // await products.addProduct(objeto2).then(data => console.log(data));
   // await products.addProduct(objeto3).then(data => console.log(data));
   // await products.addProduct(objeto4).then(data => console.log(data));
+  await products.addProduct(objeto5).then(data => console.log(data));
   // await products.getProducts().then(data => console.log(data));
-  await products.getProductById(5).then(data => console.log(data));
-  // await products.updateProduct(1, {
+  // await products.getProductById(5).then(data => console.log(data));
+  // await products.updateProduct(3, {
   //   "title": "CS GO",
   //   "description": 'Servidor de calidad alta Global Ofenssive',
   //   "price": 1800,
