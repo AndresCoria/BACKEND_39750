@@ -15,14 +15,13 @@ class ProductManager {
             }
         }
 
-    getProducts = async() => {
+    getProducts = async(limit) => {
         try {
-            const productsList = await fs.promises.readFile(this.path, 'utf-8');
+            const productsList = await fs.promises.readFile(this.path, 'utf-8')
             const products = JSON.parse(productsList)
-            return products
+            return products.slice(0, limit)
         }catch(error) {
-            if(error.message.includes('ENOENT: no such file or directory')) return []
-            console.log(error);
+            return []
             }
     }
 
@@ -62,7 +61,7 @@ class ProductManager {
         try {
             let products = await this.getProducts()
             const product = products.find(prod => prod.id === id)
-            return product ? product : console.log('No product found');
+            return product ? product : console.log('No product found')
         } catch (error) {
             console.log(error);
         }
@@ -71,7 +70,7 @@ class ProductManager {
     deleteById = async id => {
         try {
             let products = await this.getProducts()
-            const obj = products.filter(obj => obj.id !== id);
+            const obj = products.filter(obj => obj.id !== id)
             await this.writeFile(obj);
             return console.log('removed product');
         } catch (error) {

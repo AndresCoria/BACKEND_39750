@@ -2,8 +2,10 @@ const {Router} = require('express')
 const ProductManager = require('../controllers/productsManager')
 
 const router = Router()
-const productsList = new ProductManager(__filename + '../db/products.json')
-const notFound = { error: "Product not found" }
+const productsList = new ProductManager('./products.json')
+const notFound = { status: 'error', error: "Product not found" }
+
+
 
 /* ok: 200
    created: 201
@@ -15,32 +17,27 @@ const notFound = { error: "Product not found" }
     */
 
 router.get("/", async (req, res) => {
-  console.log(productsList);
   const limit = req.query.limit
-  const products = await productsList.getProducts()
-  console.log(products)
-  if (!limit) {
+  const products = await productsList.getProducts(limit)
     res.status(200).send({ status:'success', payload: products })
-  } else {
-    const limitedProducts = products.slice(0, limit)
-    res.status(200).send({ status:'success', payload: limitedProducts })
-  }
-});
+})
 
 router.get("/:pid", async (req, res) => {
   const { pid } = req.params
   const product = await productsList.getProductById(parseInt(pid))
-  !product ? res.status(404).send(notFound) : res.status(200).send({ status:'success', payload: product })
-});
+  !product ?
+  res.status(404).send( notFound )
+  :
+  res.status(200).send({ status:'success', payload: product })
+})
 
 router.post("/", async (req, res) => {
   const product = req.body
-  console.log(product);
-  const addedProduct = await productsList.addProduct(product);
+  const addedProduct = await productsList.addProduct(product)
   !addedProduct
     ? res.status(400).send({ error: "Could not add product" })
     : res.status(201).send({status:'success', payload: product})
-});
+})
 
 router.put("/:pid", async (req, res) => {
   const { pid } = req.params
@@ -52,7 +49,7 @@ router.put("/:pid", async (req, res) => {
   !modifiedProduct
     ? res.status(400).send({ error: `Could not modify product` })
     : res.status(200).send({ status:'success', payload: modifiedProduct });
-});
+})
 
 router.delete("/:pid", async (req, res) => {
   const { pid } = req.params;
@@ -60,6 +57,6 @@ router.delete("/:pid", async (req, res) => {
   !removedProduct
     ? res.status(404).send(notFound)
     : res.status(200).send({ status:'success', message:'product removed' })
-});
+})
 
 module.exports = router
