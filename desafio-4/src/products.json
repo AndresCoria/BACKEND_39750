@@ -1,3 +1,41 @@
 [
-  
+  {
+    "title": "Counter Strike 1.6",
+    "price": "1000",
+    "code": "0001",
+    "stock": "10",
+    "category": "cs 1.6",
+    "description": "counter strike 1.6",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-4\\src\\public\\uploads\\1680986286332-csgo.jpg"
+    ],
+    "id": 1
+  },
+  {
+    "title": "Counter Strike 1.6",
+    "price": "1000",
+    "code": "0002",
+    "stock": "10",
+    "category": "cs 1.6",
+    "description": "counter strike 1.6",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-4\\src\\public\\uploads\\1680986374998-csgo.jpg"
+    ],
+    "id": 2
+  },
+  {
+    "title": "Counter Strike 1.6",
+    "price": "1200",
+    "code": "0003",
+    "stock": "10",
+    "category": "cs 1.6",
+    "description": "counter strike 1.6",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-4\\src\\public\\uploads\\1680986385389-csgo.jpg"
+    ],
+    "id": 3
+  }
 ]
