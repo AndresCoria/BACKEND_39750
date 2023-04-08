@@ -3,8 +3,8 @@ const fs = require('fs')
 class ProductManager {
     constructor(path) {
         this.path = path
+        this.pathImg = '../public/uploads/'
     }
-
     writeFile = async data => {
         try {
             await fs.promises.writeFile(
@@ -14,7 +14,6 @@ class ProductManager {
             console.log(err);
             }
         }
-
     getProducts = async(limit) => {
         try {
             const productsList = await fs.promises.readFile(this.path, 'utf-8')
@@ -24,29 +23,32 @@ class ProductManager {
             return []
             }
     }
-
-    addProduct = async product => {
+    addProduct = async (product, imageName, imagePath) => {
         try {
+            console.log('que onda 2', product);
             let products = await this.getProducts()
             let newId
             let newCode = products.find(prod => prod.code === product.code)
+            //Chequeo que el campo "code" no se repita
+            if (newCode) return console.log('a product has already been entered with that code')
             //Chequeo no se repitan las id
             products.length === 0 ? newId = 1 : newId = products[products.length - 1 ].id + 1
             //Chequeo que todos los campos esten completos
-            if(!Object.values(product).every(value => value)){
-                return console.log('All fields are required')
+            if(Object.values(product).every(value => value)){
+                product.status === "true" ? product.status = true : product.status = false
+                // console.log(imageName);
+                // console.log(imagePath);
+                const thumbnail = [imageName]
+                const newProduct = {...product, thumbnail: thumbnail, id: newId}
+                products.push(newProduct)
+                await this.writeFile(products)
+                return this.getProducts()
             }
-            //Chequeo que el campo "code" no se repita
-            if (newCode) return console.log('a product has already been entered with that code');
-            const newProduct = {...product, id: newId}
-            products.push(newProduct)
-            await this.writeFile(products)
-            return this.getProducts()
+            return console.log('All fields are required')
         } catch (error) {
             console.log(error);
         }
     }
-
     updateProduct = async (id, data) => {
         try {
             const productos = await this.getProducts()
@@ -56,7 +58,6 @@ class ProductManager {
             console.log(error);
         }
     }
-
     getProductById = async id => {
         try {
             let products = await this.getProducts()
@@ -66,7 +67,6 @@ class ProductManager {
             console.log(error);
         }
     }
-
     deleteById = async id => {
         try {
             let products = await this.getProducts()
@@ -77,7 +77,5 @@ class ProductManager {
             console.log(error);
         }
     }
-
 }
-
 module.exports = ProductManager
