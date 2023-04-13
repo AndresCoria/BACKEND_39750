@@ -1,0 +1,223 @@
+[
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "0001",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379219885-csgo.jpg"
+    ],
+    "id": 1
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "00011",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379226087-csgo.jpg"
+    ],
+    "id": 2
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "000111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379230056-csgo.jpg"
+    ],
+    "id": 3
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "0001111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379232991-csgo.jpg"
+    ],
+    "id": 4
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "00011111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379236932-csgo.jpg"
+    ],
+    "id": 5
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "000111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379239799-csgo.jpg"
+    ],
+    "id": 6
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "0001111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379242826-csgo.jpg"
+    ],
+    "id": 7
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "00011111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379246054-csgo.jpg"
+    ],
+    "id": 8
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "000111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379253185-csgo.jpg"
+    ],
+    "id": 9
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "0001111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379256514-csgo.jpg"
+    ],
+    "id": 10
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "00011111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379259354-csgo.jpg"
+    ],
+    "id": 11
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "000111111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379262056-csgo.jpg"
+    ],
+    "id": 12
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "0001111111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379265224-csgo.jpg"
+    ],
+    "id": 13
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "00011111111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379268251-csgo.jpg"
+    ],
+    "id": 14
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "000111111111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379271150-csgo.jpg"
+    ],
+    "id": 15
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "0001111111111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379274106-csgo.jpg"
+    ],
+    "id": 16
+  },
+  {
+    "title": "counter strike",
+    "price": "1500",
+    "code": "00011111111111111111",
+    "stock": "10",
+    "category": "cs",
+    "description": "cs",
+    "status": true,
+    "thumbnail": [
+      "C:\\Users\\andre\\OneDrive\\Escritorio\\backend_39750\\desafio-5\\src\\public\\uploads\\1681379276908-csgo.jpg"
+    ],
+    "id": 17
+  }
+]
