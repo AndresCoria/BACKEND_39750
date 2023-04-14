@@ -21,11 +21,9 @@ dataForm.addEventListener('submit', evt => {
         if (result.isConfirmed) {
             // Si el usuario confirma, enviamos la petición al servidor para eliminar el producto
             socket.emit('client:productDelete', {
-                id: id.value,
-                cid: cid.value
+                id: id.value
             })
             console.log(id.value)
-            console.log(cid)
         }
     })
 })
