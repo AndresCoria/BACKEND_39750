@@ -70,7 +70,6 @@ router.delete("/:pid", async (req, res) => {
     try {
         const { pid } = req.params;
         const removedProduct = await productsList.deleteById(parseInt(pid))
-        console.log('log desde el router', removedProduct);
         !removedProduct
         ? res.status(200).send({ status:'success', message:'product removed' })
         : res.status(404).send(notFound)

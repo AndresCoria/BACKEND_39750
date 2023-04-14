@@ -68,7 +68,6 @@ class ProductManager {
     }
     deleteById = async id => {
         try {
-            console.log('log desde el manager', id);
             let products = await this.getProducts()
             const obj = products.filter(obj => obj.id !== id)
             await this.writeFile(obj);
