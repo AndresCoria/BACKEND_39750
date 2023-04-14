@@ -6,7 +6,6 @@ const viewsRouter = require('./routers/views.router')
 const { Server } = require('socket.io')
 const http = require('http')
 const ProductManager = require('./controllers/productsManager')
-const { dirname } = require('path')
 
 const productsList = new ProductManager((__dirname) +'/db/products.json')
 
@@ -52,13 +51,26 @@ io.on('connection', async socket => {
         const data = await productsList.getProducts()
         console.log(data);
         return io.emit('newList', data)
-        // return console.log('producto eliminado')
         }
         console.log('log desde app ', cid);
         const dataError = {status: "error", message: "Product not found"}
         return io.emit('newList', dataError)
     })
+    socket.on('client:newProduct', async data => {
+        console.log(data)
+        // const imagePath = data.file.path
+        // const imageName = file.filename
+        const productAdd = await productsList.addProduct(data)
+        if(productAdd.status === 'error'){
+            let errorMess = productAdd.message
+            io.emit('server:producAdd', {status:'error', errorMess})
+        }
+        const newData = await productsList.getProducts()
+        console.log('log de app linea 69', newData);
+        return io.emit('server:productAdd', newData)
+    })
 })
+
 
 httpServer.on('error', (error) => {
     console.log('Error', error)

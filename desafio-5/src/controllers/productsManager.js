@@ -29,21 +29,19 @@ class ProductManager {
             let newId
             let newCode = products.find(prod => prod.code === product.code)
             //Chequeo que el campo "code" no se repita
-            if (newCode) return console.log('a product has already been entered with that code')
+            if (newCode) return {status:'error', message:'a product has already been entered with that code'}
             //Chequeo no se repitan las id
             products.length === 0 ? newId = 1 : newId = products[products.length - 1 ].id + 1
             //Chequeo que todos los campos esten completos
             if(Object.values(product).every(value => value)){
                 product.status === "true" ? product.status = true : product.status = false
-                // console.log(imageName);
-                // console.log(imagePath);
                 const thumbnail = [imageName]
                 const newProduct = {...product, thumbnail: thumbnail, id: newId}
                 products.push(newProduct)
                 await this.writeFile(products)
-                return this.getProducts()
+                return {status:'success', message:'product added successfully'}
             }
-            return console.log('All fields are required')
+            return { status:'error', message:'All fields are required'}
         } catch (error) {
             console.log(error);
         }

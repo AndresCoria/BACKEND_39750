@@ -7,7 +7,6 @@ const { dirname } = require('path')
 const router = Router()
 const productsList = new ProductManager(`${dirname(__dirname)}/db/products.json`)
 const notFound = { status: 'error', error: "Product not found" }
-// const redirectHtml= res.redirect('http://localhost:8080/static')
 
 /* ok: 200
     created: 201
@@ -87,7 +86,6 @@ router.post('/formulario', uploader.single('thumbnail'), async (req, res) => {
         !addedProduct
         ? res.status(400).send({ error: "Could not add product" })
         : res.status(201).send({status:'success', payload: addedProduct})
-        // : res.status(201).send({status: 'success', payload: redirectHtml })
     } catch (error) {
         return {status: 'error', error}
     }
