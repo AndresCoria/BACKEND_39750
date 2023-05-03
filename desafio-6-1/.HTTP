@@ -1,0 +1,66 @@
+### GET A USERS MONGO
+GET   http://localhost:8080/api/usersMongo
+
+### GET A PRODUCTS MONGO
+GET http://localhost:8080/api/productsMongo
+
+### GET A USER MONGO
+GET http://localhost:8080/api/usersMongo/64507de55b25082d75475e80
+
+### GET A PRODUCT MONGO
+GET http://localhost:8080/api/productsMongo
+
+### POST A USER MONGO
+POST http://localhost:8080/api/usersMongo
+Content-Type: application/json
+{
+  "first_name": "roberto",
+  "last_name": "dajos",
+  "age": 46,
+  "address": "loria 477",
+  "gender": "masculino",
+  "email": "oero@yahoo.com"
+}
+### POST A PRODUCT MONGO
+POST http://localhost:8080/api/productsMongo/
+Content-Type: application/json
+
+{
+  "title": "producto 7",
+  "description": "descripcion 7",
+  "price": 1200,
+  "stock": 10,
+  "category": "productos",
+  "thumbnail": "url",
+  "status": true
+}
+
+### PUT A USER MONGO
+PUT http://localhost:8080/api/usersMongo/64507de85b25082d75475e82
+Content-Type: application/json
+
+{
+  "first_name": "Andres",
+  "last_name": "Coria",
+  "age": 39,
+  "address": "loria 477",
+  "gender": "masculino",
+  "email": "AndresCoria@yahoo.com"
+}
+
+### PUT A PRODUCT MONGO
+PUT http://localhost:8080/api/productsMongo/64508732a096ed9179c18fbc
+Content-Type: application/json
+
+{
+  "title": "producto 20",
+  "description": "descripcion 20",
+  "precio": 1200,
+  "stock": 10,
+}
+
+### DELETE A USER MONGO
+DELETE http://localhost:8080/api/usersMongo/64507cfaf28ecee4f0271853
+
+### DELETE A PRODUCT MONGO
+DELETE http://localhost:8080/api/productsMongo/

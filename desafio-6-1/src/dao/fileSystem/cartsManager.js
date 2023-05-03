@@ -5,7 +5,6 @@ class CartManager {
     constructor(archivo) {
         this.archivo = archivo
     }
-
     exists(archivo) {
         /* verifico si existe el archivo */
         try {
@@ -18,7 +17,6 @@ class CartManager {
             console.log(`Error looking for the file: ${error.message}`)
         }
     }
-
     readFile = async (archivo) => {
         try {
             /* leo el archivo */
@@ -28,7 +26,6 @@ class CartManager {
             console.log(`Error reading the file: ${error.message}`)
         }
     }
-
     writeFile = async data => {
         try {
             await fs.promises.writeFile(
@@ -38,7 +35,6 @@ class CartManager {
             console.log(err);
             }
         }
-
     createCart = async () => {
         try {
         /* busco si el archivo no existe o si existe, si tiene datos*/
@@ -83,7 +79,6 @@ class CartManager {
         console.log(`Error adding product: ${error.message}`);
         }
     }
-
     getCartById = async id => {
         try {
             if(this.exists(this.archivo)){
@@ -96,7 +91,6 @@ class CartManager {
             console.log(error);
         }
     }
-
     addToCart = async (cid, pid) => {
         try {
             if(this.exists(this.archivo)) {
@@ -119,7 +113,6 @@ class CartManager {
             console.log(error);
         }
     }
-
     #idGen(productsArray = []) {
         const id =
         productsArray.length === 0
