@@ -17,16 +17,38 @@ class ProductManagerMongo {
       console.log(`Error agregando producto: ${error.message}`)
     }
   }
-
   getAll = async () => {
     try {
-      const allProducts = await productsModel.find().lean(); //leer lean()
+      const allProducts = await productsModel.find().lean()
+      return allProducts
+    } catch (error) {
+      console.log(`Error obteniendo todos los productos: ${error.message}`)
+    }
+  }
+  getAllPaginated = async (limit, page, sort, title = "", category = "") => {
+    try {
+      const search = {
+        stock: { $gte: 0 },
+        category: { $regex: category, $options: "i" },
+        title: { $regex: title, $options: "i" },
+      }
+      if (sort === "asc") {
+        sort = { price: 1 };
+      } else if (sort === "desc") {
+        sort = { price: -1 };
+      }
+      const options = {
+        page,
+        limit,
+        sort,
+        lean: true,
+      }
+      const allProducts = await productsModel.paginate(search, options);
       return allProducts;
     } catch (error) {
       console.log(`Error obteniendo todos los productos: ${error.message}`)
     }
   }
-
   getById = async (id) => {
     try {
       const product = await productsModel.find({ _id: id })
@@ -41,24 +63,22 @@ class ProductManagerMongo {
       )
     }
   }
-
-  updateProduct = async (id, product) => {
+  updateProduct = async (id, data) => {
     try {
-      const productFinded = await this.getById(id);
+      const productFinded = await this.getById(id)
       if (productFinded) {
-        await productsModel.findOneAndUpdate({ _id: id }, product)
+        await productsModel.findOneAndUpdate({ _id: id }, data)
         const updatedProduct = await this.getById(id)
-        return updatedProduct
+        return {status: 'success', payload: updatedProduct}
       } else {
         throw new Error(`No se encontro el producto con el id solicitado`)
       }
     } catch (error) {
       console.log(
-        `Error al modificar producto con el id ${id}: ${error.message}`
-      );
+        `Error al modificar producto con el id ${{_id: id}}: ${error.message}`
+      )
     }
   }
-
   deleteById = async (id) => {
     try {
       const deletedProduct = await this.getById(id)
@@ -71,10 +91,9 @@ class ProductManagerMongo {
     } catch (error) {
       console.log(
         `Error al eliminar el producto con el id solicitado: ${error.message}`
-      );
+      )
     }
   }
-
   deleteAll = async () => {
     try {
       await productsModel.deleteMany()
@@ -83,7 +102,6 @@ class ProductManagerMongo {
       console.log(`Ocurrio un error eliminando los datos: ${error.message}`)
     }
   }
-
   #codeGenerator(codeLength = 15) {
     const numeros = "0123456789"
     const letras = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
@@ -95,7 +113,6 @@ class ProductManagerMongo {
     }
     return code
   }
-
   #paramsValidator(product) {
     if (
       product.title &&
@@ -106,7 +123,7 @@ class ProductManagerMongo {
       !product.id &&
       !product.code
     ) {
-      return true;
+      return true
     } else {
       if (!product.title) {
         throw new Error(`Falta el title del producto.`)
