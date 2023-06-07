@@ -1,0 +1,77 @@
+### GET A USERS MONGO
+GET   http://localhost:8080/api/usersMongo
+
+### GET A PRODUCTS MONGO (RENDER)
+GET http://localhost:8080/api/productsMongo
+
+### GET A PRODUCTS MONGO
+GET http://localhost:8080/products
+
+### GET A USER MONGO
+GET http://localhost:8080/api/usersMongo/64507de85b25082d75475e82
+
+
+### GET A PRODUCT MONGO
+GET http://localhost:8080/api/productsMongo/6465b1982eea969a83f72a17
+
+### POST A USER MONGO
+POST http://localhost:8080/api/usersMongo
+Content-Type: application/json
+
+{
+  "first_name": "federico",
+  "last_name": "osandon",
+  "age": 22,
+  "address": "falsa 123",
+  "gender": "masculino",
+  "email": "fede@gmail.com"
+}
+### POST A PRODUCT MONGO
+POST http://localhost:8080/api/productsMongo/
+Content-Type: application/json
+
+{
+  "title": "producto 2",
+  "description": "descripcion 2",
+  "price": 1200,
+  "stock": 10,
+  "category": "productos",
+  "thumbnail": "https://ibb.co/n18zJkQ",
+  "status": true
+}
+
+### PUT A USER MONGO
+PUT http://localhost:8080/api/usersMongo/6465c0212a8f37dcc3386ee4
+Content-Type: application/json
+
+{
+  "first_name": "federico",
+  "last_name": "osandon",
+  "age": 22,
+  "address": "falsa 123",
+  "gender": "masculino",
+  "email": "fede123@gmail.com"
+}
+
+### PUT A PRODUCT MONGO
+PUT http://localhost:8080/api/productsMongo/6465c41957ca21cb058093e7
+Content-Type: application/json
+
+{
+  "title": "producto 3",
+  "description": "descripcion 3",
+  "price": 1200,
+  "stock": 10,
+  "category": "productos",
+  "thumbnail": "https://ibb.co/n18zJkQ",
+  "status": true
+}
+
+### DELETE A USER MONGO
+DELETE http://localhost:8080/api/usersMongo/64507cfaf28ecee4f0271853
+
+### DELETE A PRODUCT MONGO
+DELETE http://localhost:8080/api/productsMongo/6465c41957ca21cb058093e7
+
+### GET A CART
+GET http://localhost:8080/api/cartsMongo/6465bace504579cc972e4cf1
